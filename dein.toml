@@ -1,0 +1,32 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'yuki-ycino/fzf-preview.vim'
+rev = 'release'
+hook_add = '''
+  source ~/.config/nvim/plugins/fzf-preview.vim
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf'
+merged = '0'
+build = './install --all'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merged = '0'
+rev = 'release'
+hook_add = '''
+  source ~/.config/nvim/plugins/coc.vim
+'''
+
+[[plugins]]
+repo = 'itchyny/vim-cursorword'
