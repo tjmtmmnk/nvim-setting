@@ -37,6 +37,7 @@ set expandtab
 set clipboard=unnamed  "yank した文字列をクリップボードにコピー
 set hls
 set termguicolors
+"for lightline
 set laststatus=2
 if !has('gui_running')
   set t_Co=256
@@ -44,6 +45,6 @@ endif
 
 nnoremap <CR> $
 nnoremap <BS> ^
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-nnoremap <leader>x "_x
+nnoremap d "_d
+xnoremap d "_d
+nnoremap x "_x

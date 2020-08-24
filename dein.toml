@@ -9,6 +9,12 @@ repo = 'Shougo/deoplete.nvim'
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  source ~/.config/nvim/plugins/lightline.vim
+'''
+
+[[plugins]]
 repo = 'yuki-ycino/fzf-preview.vim'
 rev = 'release'
 hook_add = '''
@@ -30,3 +36,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'itchyny/vim-cursorword'
+
+[[plugins]]
+repo = 'itchyny/vim-gitbranch'
