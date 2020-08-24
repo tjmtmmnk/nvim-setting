@@ -43,6 +43,10 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+"use zsh
+set shell=/bin/zsh
+let $SHELL = "/bin/zsh"
+
 nnoremap <CR> $
 nnoremap <BS> ^
 nnoremap d "_d

@@ -39,3 +39,6 @@ repo = 'itchyny/vim-cursorword'
 
 [[plugins]]
 repo = 'itchyny/vim-gitbranch'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
