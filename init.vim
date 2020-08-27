@@ -33,6 +33,7 @@ set cursorline
 hi clear CursorLine
 colorscheme molokai
 set number
+set ignorecase
 set smartindent
 set tabstop=2
 set shiftwidth=2

@@ -21,3 +21,4 @@ nnoremap <silent> [fzf-p]l     :<C-u>FzfPreviewLocationList<CR>
 let g:fzf_preview_grep_cmd = 'rg --line-number --no-heading --color=never --ignore-case'
 let g:fzf_preview_filelist_command = 'rg --files --no-messages -g \!"* *"' " Installed ripgrep
 let g:fzf_preview_command = 'bat --color=always --plain {-1}' " Installed bat
+let g:fzf_preview_fzf_color_option = 'fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81,info:144,prompt:161,spinner:135,pointer:135,marker:118'
