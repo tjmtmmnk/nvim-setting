@@ -56,6 +56,7 @@ nnoremap <BS> ^
 nnoremap d "_d
 xnoremap d "_d
 nnoremap x "_x
+nnoremap <ESC><ESC> :nohl<CR>
 
 "tabpage
 " Anywhere SID.

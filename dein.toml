@@ -42,3 +42,21 @@ repo = 'itchyny/vim-gitbranch'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'mattn/vim-goimports'
+
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = '''
+ let g:rainbow_active = 1
+'''
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'vim-scripts/vim-auto-save'
+hook_add = '''
+ let g:auto_save_in_insert_mode = 0
+'''
