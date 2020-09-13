@@ -5,11 +5,13 @@ let g:lightline = {
       \             [ 'readonly', 'branch', 'filename' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'fileencoding', 'filetype' ] ],
+      \              [ 'funcname', 'fileencoding', 'filetype' ],
+      \              ],
       \ },
       \ 'component_function': {
       \   'branch': 'gitbranch#name',
       \   'filename': 'LightlineFilename',
+      \   'funcname': 'GetFunctionName',
       \ },
       \ }
 
@@ -27,4 +29,8 @@ function! LightlineFilename()
         endif
     endif
     return filename
+endfunction
+
+function! GetFunctionName()
+  return cfi#format("%s", "")
 endfunction

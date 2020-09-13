@@ -44,6 +44,9 @@ repo = 'itchyny/vim-gitbranch'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
+repo = 'tpope/vim-rhubarb'
+
+[[plugins]]
 repo = 'mattn/vim-goimports'
 
 [[plugins]]
@@ -58,5 +61,10 @@ repo = 'cohama/lexima.vim'
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
 hook_add = '''
+ let g:auto_save = 1
  let g:auto_save_in_insert_mode = 0
+ let g:auto_save_silent = 1
 '''
+
+[[plugins]]
+repo = 'tyru/current-func-info.vim'
