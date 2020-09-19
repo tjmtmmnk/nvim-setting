@@ -5,7 +5,7 @@ let g:lightline = {
       \             [ 'readonly', 'branch', 'filename' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'funcname', 'fileencoding', 'filetype' ],
+      \              [ 'funcname'],
       \              ],
       \ },
       \ 'component_function': {
@@ -15,6 +15,10 @@ let g:lightline = {
       \ },
       \ }
 
+let g:lightline.component = {
+    \ 'lineinfo': '%3l[%L]:%-2v'
+    \ }
+
 function! LightlineFilename()
   if expand('%:t') ==# ''
         let filename = '[No Name]'
@@ -23,9 +27,9 @@ function! LightlineFilename()
         if len(dirfiles) < 2
             let filename = dirfiles[0]
         elseif len(dirfiles) < 3
-            let filename = dirfiles[-2] . '/' . dirfiles[-1]
+            let filename = dirfiles[-2][0] . '/' . dirfiles[-1]
         else
-            let filename = dirfiles[-3] . '/' . dirfiles[-2] . '/' . dirfiles[-1]
+            let filename = dirfiles[-3][0] . '/' . dirfiles[-2][0] . '/' . dirfiles[-1]
         endif
     endif
     return filename
