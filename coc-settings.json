@@ -1,10 +1,4 @@
 {
-"languageserver": {
-    "go": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "trace.server": "verbose",
-      "filetypes": ["go"]
-    }
-  }
+  "tabnine.disable_file_regex": ["[.]go$"],
+  "python.jediEnabled": false 
 }

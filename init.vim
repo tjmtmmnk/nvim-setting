@@ -31,7 +31,7 @@ syntax enable
 autocmd ColorScheme * highlight LineNr guifg=DarkGrey
 set cursorline
 hi clear CursorLine
-colorscheme molokai
+colorscheme molokai 
 set number
 set ignorecase
 set smartindent
@@ -49,12 +49,18 @@ if !has('gui_running')
 endif
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 
+"window
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "use zsh
 set shell=/bin/zsh
 let $SHELL = "/bin/zsh"
 
-nnoremap <CR> $
-nnoremap <BS> ^
+nmap <BS> [c
+nmap <CR> ]c
 nnoremap d "_d
 xnoremap d "_d
 nnoremap x "_x

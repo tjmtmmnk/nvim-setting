@@ -71,3 +71,9 @@ repo = 'tyru/current-func-info.vim'
 
 [[plugins]]
 repo = 'buoto/gotests-vim'
+
+[[plugins]]
+repo = 'brooth/far.vim'
+hook_add = '''
+  source ~/.config/nvim/plugins/far.vim
+'''
