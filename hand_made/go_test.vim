@@ -1,5 +1,5 @@
 autocmd FileType go nnoremap <silent> gt :<C-u>silent call <SID>go_test_function()<CR>
-
+autocmd FileType go nnoremap <silent> gb :<C-u>silent call <SID>go_bench_function()<CR>
 function! s:go_test_function() abort
     let test_info = json_decode(system(printf('go-test-name -pos %s -file %s', s:cursor_byte_offset(), @%)))
 
@@ -12,9 +12,9 @@ function! s:go_test_function() abort
     let dir = expand('%:p:h')
 
     if len(test_info.sub_test_names) > 0
-        let cmd = printf("go test -coverprofile='/tmp/go-coverage.out' -count=1 -v -race -run='^%s$'/'^%s$' $(go list %s)", test_info.test_func_name, test_info.sub_test_names[0], dir)
+        let cmd = printf("go test -coverprofile='/tmp/go-coverage.out' -count=1 -v -run='^%s$'/'^%s$' $(go list %s)", test_info.test_func_name, test_info.sub_test_names[0], dir)
     else
-        let cmd = printf("go test -coverprofile='/tmp/go-coverage.out' -count=1 -v -race -run='^%s$' $(go list %s)", test_info.test_func_name, dir)
+        let cmd = printf("go test -coverprofile='/tmp/go-coverage.out' -count=1 -v -run='^%s$' $(go list %s)", test_info.test_func_name, dir)
     endif
 
     let split = s:split_type()
@@ -31,6 +31,35 @@ function! s:go_test_function() abort
     file vim-go-test-func
     wincmd p
 endfunction
+
+function! s:go_bench_function() abort
+    let test_info = json_decode(system(printf('go-test-name -pos %s -file %s', s:cursor_byte_offset(), @%)))
+
+    for b in nvim_list_bufs()
+        if bufname(b) ==# 'vim-go-bench-func'
+            execute printf('bwipe! %s', b)
+        endif
+    endfor
+
+    let dir = expand('%:p:h')
+
+    let cmd = printf("go test -bench=%s $(go list %s)", test_info.test_func_name, dir)
+
+    let split = s:split_type()
+    execut printf('%s gotest', split)
+
+    if split ==# 'split'
+        execute(printf('resize %s', floor(&lines * 0.3)))
+    endif
+
+    call termopen(cmd)
+    setlocal bufhidden=delete
+    setlocal noswapfile
+    setlocal nobuflisted
+    file vim-go-bench-func
+    wincmd p
+endfunction
+
 
 function! s:cursor_byte_offset() abort
     return line2byte(line('.')) + (col('.') - 2)

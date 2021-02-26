@@ -3,9 +3,6 @@ let mapleader = "\<Space>"
 "========================================="
 " plugin Manager: dein.vim setting
 "========================================="
-if &compatible
-    set nocompatible
-endif
   
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
@@ -60,7 +57,6 @@ set shell=/bin/zsh
 let $SHELL = "/bin/zsh"
 
 nmap <BS> [c
-nmap <CR> ]c
 nnoremap d "_d
 xnoremap d "_d
 nnoremap x "_x

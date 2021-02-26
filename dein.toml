@@ -77,3 +77,15 @@ repo = 'brooth/far.vim'
 hook_add = '''
   source ~/.config/nvim/plugins/far.vim
 '''
+
+[[plugins]]
+repo = 'Chiel92/vim-autoformat'
+hook_add = '''
+  source ~/.config/nvim/plugins/vim-autoformat.vim
+'''
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+
+[[plugins]]
+repo = 'pechorin/any-jump.vim'
